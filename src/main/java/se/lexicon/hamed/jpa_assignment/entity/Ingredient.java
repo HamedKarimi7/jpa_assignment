@@ -6,13 +6,13 @@ import java.util.Objects;
 public class Ingredient {
 
     private int id;
-    private String Salt;
+    private String name;
 
     public Ingredient() {
     }
 
-    public Ingredient(String salt) {
-        Salt = salt;
+    public Ingredient(String name) {
+        this.name = name;
     }
 
 
@@ -24,12 +24,12 @@ public class Ingredient {
         this.id = id;
     }
 
-    public String getSalt() {
-        return Salt;
+    public String getName() {
+        return name;
     }
 
-    public void setSalt(String salt) {
-        Salt = salt;
+    public void setName(String name) {
+        this.name = name;
     }
 
 
@@ -38,15 +38,12 @@ public class Ingredient {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ingredient that = (Ingredient) o;
-        return id == that.id && Objects.equals(Salt, that.Salt);
+        return id == that.id && Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, Salt);
+        return Objects.hash(id, name);
     }
-
-
-
 }
 
